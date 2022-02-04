@@ -1,10 +1,14 @@
 package dev.innov8.prism.auth.dtos.requests;
 
+import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
 public class AuthenticationRequest {
 
+    @NotBlank
     private String orgId;
+
+    @NotBlank
     private String authCode;
 
     public String getOrgId() {

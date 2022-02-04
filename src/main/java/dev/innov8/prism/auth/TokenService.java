@@ -52,7 +52,7 @@ public class TokenService {
 
     private boolean isPrincipalValid(Principal subject) {
         return subject != null &&
-                subject.getId() != null && !subject.getId().equals("") &&
+                subject.getOrgId() != null && !subject.getOrgId().equals("") &&
                 subject.getOrgName() != null && !subject.getOrgName().equals("");
     }
 

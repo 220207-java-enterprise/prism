@@ -28,7 +28,7 @@ public class TokenValidator {
                                 .parseClaimsJws(token)
                                 .getBody();
 
-            return Optional.of(new Principal(claims.getId(), claims.getSubject()));
+            return Optional.of(new Principal(claims.getId(), claims.getSubject(), claims.get("authCode", String.class)));
 
         } catch (Exception e) {
             throw new InvalidTokenException(e.getMessage());

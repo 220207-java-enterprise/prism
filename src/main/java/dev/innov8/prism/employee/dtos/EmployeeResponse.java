@@ -1,22 +1,26 @@
 package dev.innov8.prism.employee.dtos;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import dev.innov8.prism.employee.AccountInfo;
+import dev.innov8.prism.employee.Employee;
 
-import javax.validation.constraints.NotBlank;
+public class EmployeeResponse {
 
-public class EditEmployeeRequest {
-
-    @NotBlank
     private String id;
-
     private String firstName;
     private String lastName;
     private String emailAddress;
-    private AccountInfo accountInfo;
-
-    @JsonIgnore
     private String orgId;
+    private AccountInfoResponse accountInfo;
+    private boolean active;
+
+    public EmployeeResponse(Employee employee) {
+        this.id = employee.getId();
+        this.firstName = employee.getFirstName();
+        this.lastName = employee.getLastName();
+        this.emailAddress = employee.getEmailAddress();
+        this.orgId = employee.getOrganization().getId();
+        this.accountInfo = new AccountInfoResponse(employee.getAccountInfo());
+        this.active = employee.isActive();
+    }
 
     public String getId() {
         return id;
@@ -50,14 +54,6 @@ public class EditEmployeeRequest {
         this.emailAddress = emailAddress;
     }
 
-    public AccountInfo getAccountInfo() {
-        return accountInfo;
-    }
-
-    public void setAccountInfo(AccountInfo accountInfo) {
-        this.accountInfo = accountInfo;
-    }
-
     public String getOrgId() {
         return orgId;
     }
@@ -66,15 +62,33 @@ public class EditEmployeeRequest {
         this.orgId = orgId;
     }
 
+    public AccountInfoResponse getAccountInfo() {
+        return accountInfo;
+    }
+
+    public void setAccountInfo(AccountInfoResponse accountInfo) {
+        this.accountInfo = accountInfo;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     @Override
     public String toString() {
-        return "EditEmployeeRequest{" +
+        return "EmployeeResponse{" +
                 "id='" + id + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +
-                ", accountInfo=" + accountInfo +
                 ", orgId='" + orgId + '\'' +
+                ", accountInfo=" + accountInfo +
+                ", active=" + active +
                 '}';
     }
+
 }

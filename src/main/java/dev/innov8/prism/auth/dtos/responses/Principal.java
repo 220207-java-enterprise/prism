@@ -2,37 +2,35 @@ package dev.innov8.prism.auth.dtos.responses;
 
 import dev.innov8.prism.organization.Organization;
 
-import javax.validation.constraints.NotBlank;
 
 public class Principal {
 
-    @NotBlank
-    private String id;
-
-    @NotBlank
+    private String orgId;
     private String orgName;
-
+    private String authCode;
 
     public Principal() {
         super();
     }
 
     public Principal(Organization org) {
-        this.id = org.getId();
+        this.orgId = org.getId();
         this.orgName = org.getName();
+        this.authCode = org.getAuthCode();
     }
 
-    public Principal(String id, String orgName) {
-        this.id = id;
+    public Principal(String id, String orgName, String authCode) {
+        this.orgId = id;
         this.orgName = orgName;
+        this.authCode = authCode;
     }
 
-    public String getId() {
-        return id;
+    public String getOrgId() {
+        return orgId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setOrgId(String orgId) {
+        this.orgId = orgId;
     }
 
     public String getOrgName() {
@@ -43,14 +41,22 @@ public class Principal {
         this.orgName = orgName;
     }
 
+    public String getAuthCode() {
+        return authCode;
+    }
+
+    public void setAuthCode(String authCode) {
+        this.authCode = authCode;
+    }
+
     public Organization extractUser() {
-        return new Organization(id, orgName);
+        return new Organization(orgId, orgName, authCode);
     }
 
     @Override
     public String toString() {
         return "PrincipalResponse{" +
-                "id='" + id + '\'' +
+                "orgId='" + orgId + '\'' +
                 ", orgName='" + orgName + '\'' +
                 '}';
     }

@@ -23,10 +23,11 @@ public class TokenGenerator {
         long now = System.currentTimeMillis();
 
         JwtBuilder tokenBuilder = Jwts.builder()
-                                      .setId(subject.getId())
+                                      .setId(subject.getOrgId())
                                       .setSubject(subject.getOrgName())
                                       .setIssuer("prism")
                                       .setIssuedAt(new Date(now))
+                                      .claim("authCode", subject.getAuthCode())
                                       .setExpiration(new Date(now + jwtConfig.getExpiration()))
                                       .signWith(jwtConfig.getSigAlg(), jwtConfig.getSigningKey());
 

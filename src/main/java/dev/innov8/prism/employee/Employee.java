@@ -1,5 +1,6 @@
 package dev.innov8.prism.employee;
 
+import dev.innov8.prism.employee.dtos.NewEmployeeRequest;
 import dev.innov8.prism.organization.Organization;
 
 import javax.persistence.*;
@@ -26,11 +27,18 @@ public class Employee {
     private Organization organization;
 
     @Embedded
-    private AccountInfo bankInfo;
+    private AccountInfo accountInfo;
 
     @Column(nullable = false)
     private boolean active;
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -56,12 +64,20 @@ public class Employee {
         this.emailAddress = emailAddress;
     }
 
-    public AccountInfo getBankInfo() {
-        return bankInfo;
+    public Organization getOrganization() {
+        return organization;
     }
 
-    public void setBankInfo(AccountInfo bankInfo) {
-        this.bankInfo = bankInfo;
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
+    }
+
+    public AccountInfo getAccountInfo() {
+        return accountInfo;
+    }
+
+    public void setAccountInfo(AccountInfo bankInfo) {
+        this.accountInfo = bankInfo;
     }
 
     public boolean isActive() {
@@ -72,17 +88,27 @@ public class Employee {
         this.active = active;
     }
 
+    public static Employee fromNewRequest(NewEmployeeRequest newEmployeeRequest) {
+        Employee newEmployee = new Employee();
+        newEmployee.setFirstName(newEmployeeRequest.getFirstName());
+        newEmployee.setLastName(newEmployeeRequest.getLastName());
+        newEmployee.setEmailAddress(newEmployeeRequest.getEmailAddress());
+        newEmployee.setOrganization(new Organization(newEmployeeRequest.getOrgId()));
+        newEmployee.setAccountInfo(newEmployeeRequest.getAccountInfo());
+        return newEmployee;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return active == employee.active && Objects.equals(id, employee.id) && Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName) && Objects.equals(emailAddress, employee.emailAddress) && Objects.equals(organization, employee.organization) && Objects.equals(bankInfo, employee.bankInfo);
+        return active == employee.active && Objects.equals(id, employee.id) && Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName) && Objects.equals(emailAddress, employee.emailAddress) && Objects.equals(organization, employee.organization) && Objects.equals(accountInfo, employee.accountInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, emailAddress, organization, bankInfo, active);
+        return Objects.hash(id, firstName, lastName, emailAddress, organization, accountInfo, active);
     }
 
     @Override
@@ -93,7 +119,7 @@ public class Employee {
                 ", lastName='" + lastName + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +
                 ", organization=" + organization +
-                ", bankInfo=" + bankInfo +
+                ", bankInfo=" + accountInfo +
                 ", active=" + active +
                 '}';
     }

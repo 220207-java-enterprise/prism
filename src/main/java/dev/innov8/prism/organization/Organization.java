@@ -23,13 +23,31 @@ public class Organization {
     @Column(name = "auth_code", unique = true, nullable = false)
     private String authCode;
 
+    @Column(nullable = false)
+    private String key;
+
     public Organization() {
         super();
     }
 
-    public Organization(String id, String name) {
+    public Organization(String id) {
+        this.id = id;
+    }
+
+    public Organization(String name, String key) {
+        this.name = name;
+        this.key = key;
+    }
+
+    public Organization(String id, String name, String authCode) {
         this.id = id;
         this.name = name;
+        this.authCode = authCode;
+    }
+
+    public Organization(String name, List<Employee> employees) {
+        this.name = name;
+        this.employees = employees;
     }
 
     public String getId() {
@@ -68,17 +86,25 @@ public class Organization {
         this.authCode = authCode;
     }
 
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Organization that = (Organization) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(employees, that.employees) && Objects.equals(authCode, that.authCode);
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(employees, that.employees) && Objects.equals(authCode, that.authCode) && Objects.equals(key, that.key);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, employees, authCode);
+        return Objects.hash(id, name, employees, authCode, key);
     }
 
     @Override
@@ -86,8 +112,8 @@ public class Organization {
         return "Organization{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", employees=" + employees +
                 ", authCode='" + authCode + '\'' +
+                ", key='" + key + '\'' +
                 '}';
     }
 

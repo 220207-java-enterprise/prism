@@ -16,7 +16,10 @@ public class Payment {
     @ManyToOne
     @JoinColumn(nullable = false)
     private Employee payee;
+
+    @Column(nullable = false)
     private double amount;
+
     private LocalDateTime submitted;
 
     public String getId() {

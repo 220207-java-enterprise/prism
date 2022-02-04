@@ -2,13 +2,13 @@ package dev.innov8.prism.organization.dtos;
 
 import javax.validation.constraints.NotBlank;
 
-public class EditOrgRequest {
+public class ResetAuthCodeRequest {
 
     @NotBlank
     private String orgId;
 
     @NotBlank
-    private String orgName;
+    private String orgKey;
 
     public String getOrgId() {
         return orgId;
@@ -18,20 +18,19 @@ public class EditOrgRequest {
         this.orgId = orgId;
     }
 
-    public String getOrgName() {
-        return orgName;
+    public String getOrgKey() {
+        return orgKey;
     }
 
-    public void setOrgName(String orgName) {
-        this.orgName = orgName;
+    public void setOrgKey(String orgKey) {
+        this.orgKey = orgKey;
     }
-
 
     @Override
     public String toString() {
-        return "EditOrgRequest{" +
+        return "ResetAuthCodeRequest{" +
                 "orgId='" + orgId + '\'' +
-                ", orgName='" + orgName + '\'' +
+                ", orgKey='" + orgKey + '\'' +
                 '}';
     }
 
