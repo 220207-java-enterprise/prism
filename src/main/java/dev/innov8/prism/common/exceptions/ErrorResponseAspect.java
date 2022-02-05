@@ -7,14 +7,12 @@ import org.springframework.http.converter.HttpMessageConversionException;
 import org.springframework.orm.jpa.JpaObjectRetrievalFailureException;
 import org.springframework.validation.BindException;
 import org.springframework.validation.FieldError;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 

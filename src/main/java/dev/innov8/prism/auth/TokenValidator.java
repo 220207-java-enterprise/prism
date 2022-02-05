@@ -1,6 +1,5 @@
 package dev.innov8.prism.auth;
 
-import dev.innov8.prism.auth.dtos.responses.Principal;
 import dev.innov8.prism.common.exceptions.InvalidTokenException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -34,10 +33,6 @@ public class TokenValidator {
             throw new InvalidTokenException(e.getMessage());
         }
 
-    }
-
-    public int getDefaultTokenExpiry() {
-        return jwtConfig.getExpiration();
     }
 
 }

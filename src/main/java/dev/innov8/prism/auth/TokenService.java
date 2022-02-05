@@ -1,6 +1,5 @@
 package dev.innov8.prism.auth;
 
-import dev.innov8.prism.auth.dtos.responses.Principal;
 import dev.innov8.prism.common.exceptions.InvalidRequestException;
 import dev.innov8.prism.common.exceptions.InvalidTokenException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,10 +43,6 @@ public class TokenService {
         return tokenValidator.parseToken(token)
                              .orElseThrow(InvalidTokenException::new);
 
-    }
-
-    public int getDefaultTokenExpiry() {
-        return tokenValidator.getDefaultTokenExpiry();
     }
 
     private boolean isPrincipalValid(Principal subject) {

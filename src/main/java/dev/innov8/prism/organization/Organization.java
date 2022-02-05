@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name = "organizations")
 public class Organization {

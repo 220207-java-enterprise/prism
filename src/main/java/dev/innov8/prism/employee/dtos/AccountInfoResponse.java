@@ -2,6 +2,7 @@ package dev.innov8.prism.employee.dtos;
 
 import dev.innov8.prism.employee.AccountInfo;
 
+@SuppressWarnings("unused")
 public class AccountInfoResponse {
 
     private String institutionName;

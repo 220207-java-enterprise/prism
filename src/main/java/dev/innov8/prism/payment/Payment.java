@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@SuppressWarnings("unused")
 @Entity
 @Table(name = "payments")
 public class Payment {

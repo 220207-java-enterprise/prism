@@ -2,6 +2,7 @@ package dev.innov8.prism.employee.dtos;
 
 import dev.innov8.prism.employee.Employee;
 
+@SuppressWarnings("unused")
 public class EmployeeResponse {
 
     private String id;

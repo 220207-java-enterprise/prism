@@ -1,14 +1,10 @@
 package dev.innov8.prism.organization.dtos;
 
-import dev.innov8.prism.employee.Employee;
-import dev.innov8.prism.employee.dtos.NewEmployeeRequest;
 import dev.innov8.prism.organization.Organization;
 
 import javax.validation.constraints.NotBlank;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
+@SuppressWarnings("unused")
 public class NewOrgRequest {
 
     @NotBlank

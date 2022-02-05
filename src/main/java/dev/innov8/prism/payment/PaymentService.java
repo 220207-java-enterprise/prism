@@ -5,8 +5,6 @@ import dev.innov8.prism.common.exceptions.AuthorizationException;
 import dev.innov8.prism.common.exceptions.ResourceNotFoundException;
 import dev.innov8.prism.employee.Employee;
 import dev.innov8.prism.employee.EmployeeRepository;
-import dev.innov8.prism.employee.EmployeeService;
-import dev.innov8.prism.employee.dtos.EmployeeResponse;
 import dev.innov8.prism.payment.dtos.NewPaymentRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package dev.innov8.prism.common.security;
 
-import dev.innov8.prism.auth.dtos.responses.Principal;
+import dev.innov8.prism.auth.Principal;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
 

@@ -2,6 +2,7 @@ package dev.innov8.prism.organization.dtos;
 
 import javax.validation.constraints.NotBlank;
 
+@SuppressWarnings("unused")
 public class EditOrgRequest {
 
     @NotBlank

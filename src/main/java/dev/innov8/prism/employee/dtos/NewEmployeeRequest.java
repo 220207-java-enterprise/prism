@@ -6,6 +6,7 @@ import dev.innov8.prism.employee.AccountInfo;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
+@SuppressWarnings("unused")
 public class NewEmployeeRequest {
 
     @NotBlank

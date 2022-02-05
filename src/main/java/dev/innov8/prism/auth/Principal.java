@@ -1,8 +1,8 @@
-package dev.innov8.prism.auth.dtos.responses;
+package dev.innov8.prism.auth;
 
 import dev.innov8.prism.organization.Organization;
 
-
+@SuppressWarnings("unused")
 public class Principal {
 
     private String orgId;
@@ -47,10 +47,6 @@ public class Principal {
 
     public void setAuthCode(String authCode) {
         this.authCode = authCode;
-    }
-
-    public Organization extractUser() {
-        return new Organization(orgId, orgName, authCode);
     }
 
     @Override

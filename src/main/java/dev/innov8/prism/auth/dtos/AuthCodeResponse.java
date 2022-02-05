@@ -1,5 +1,6 @@
-package dev.innov8.prism.organization.dtos;
+package dev.innov8.prism.auth.dtos;
 
+@SuppressWarnings("unused")
 public class AuthCodeResponse {
 
     private String orgId;

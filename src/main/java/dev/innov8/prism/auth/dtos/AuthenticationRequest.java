@@ -1,8 +1,9 @@
-package dev.innov8.prism.auth.dtos.requests;
+package dev.innov8.prism.auth.dtos;
 
 import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
+@SuppressWarnings("unused")
 public class AuthenticationRequest {
 
     @NotBlank

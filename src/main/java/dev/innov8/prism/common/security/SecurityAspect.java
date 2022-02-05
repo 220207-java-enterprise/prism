@@ -2,7 +2,7 @@ package dev.innov8.prism.common.security;
 
 import dev.innov8.prism.auth.AuthService;
 import dev.innov8.prism.auth.TokenService;
-import dev.innov8.prism.auth.dtos.responses.Principal;
+import dev.innov8.prism.auth.Principal;
 import dev.innov8.prism.common.exceptions.AuthenticationException;
 import dev.innov8.prism.common.exceptions.InvalidTokenException;
 import org.aspectj.lang.annotation.Aspect;

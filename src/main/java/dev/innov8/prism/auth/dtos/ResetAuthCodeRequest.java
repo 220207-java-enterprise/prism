@@ -1,7 +1,8 @@
-package dev.innov8.prism.organization.dtos;
+package dev.innov8.prism.auth.dtos;
 
 import javax.validation.constraints.NotBlank;
 
+@SuppressWarnings("unused")
 public class ResetAuthCodeRequest {
 
     @NotBlank

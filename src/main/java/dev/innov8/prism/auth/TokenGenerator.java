@@ -1,6 +1,5 @@
 package dev.innov8.prism.auth;
 
-import dev.innov8.prism.auth.dtos.responses.Principal;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Autowired;
