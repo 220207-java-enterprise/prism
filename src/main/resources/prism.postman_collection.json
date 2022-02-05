@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "750d8cdc-1e30-4a1c-9467-a3e66f958f71",
+		"name": "Prism",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register Organization",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"TestOrg\",\n    \"key\": \"my-secret-key\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/organizations",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"organizations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orgId\": \"cb5a2eef-ddca-4eba-b5aa-dd57c5e7f12f\",\n    \"authCode\": \"3ad46672-1d8f-46fb-9359-677cfb69afce\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Org Info",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjYjVhMmVlZi1kZGNhLTRlYmEtYjVhYS1kZDU3YzVlN2YxMmYiLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5MjE0MDQsImF1dGhDb2RlIjoiM2FkNDY2NzItMWQ4Zi00NmZiLTkzNTktNjc3Y2ZiNjlhZmNlIiwiZXhwIjoxNjQzOTI1MDA0fQ.guACwmOwAoIaZTOStU948h2iPkPvTrhDiIpirDYrRlE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orgId\": \"cb5a2eef-ddca-4eba-b5aa-dd57c5e7f12f\",\n    \"orgName\": \"New Test Org\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/organizations",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"organizations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Org Auth Code",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orgId\": \"cb5a2eef-ddca-4eba-b5aa-dd57c5e7f12f\",\n    \"orgKey\": \"my-secret-key\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/organizations/code",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"organizations",
+						"code"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Organization",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4NDU2NDU3Ny0wOTY2LTQ3MWQtYTBjOS00ZWNjNDFmMjMzNjAiLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5MjE4MzQsImF1dGhDb2RlIjoiM2QwZjA0NzItZWEwYi00ZWI2LWJmNjAtNjY0ZDEzNWQzZDc4IiwiZXhwIjoxNjQzOTI1NDM0fQ.NCqRceYEco8eN4Djn1hAzQAz0cPAYEOKL0h_7zscbVU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/prism/organizations/84564577-0966-471d-a0c9-4ecc41f23360",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"organizations",
+						"84564577-0966-471d-a0c9-4ecc41f23360"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Employee To Org",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI0MTE4MDExYy01ZWYyLTRmNTUtYmUxNS05YTlmMzJmOWZkMzciLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5MjE5MTQsImF1dGhDb2RlIjoiN2ZhYmJiZDctNTJhNi00YWY2LTg3ZjMtMzIwNmQ0NjJhM2U3IiwiZXhwIjoxNjQzOTI1NTE0fQ.tJZzGkGEspId-9uVV4Rojvmt5k-qn9jLCQ9bakX1Dvk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Tester\",\n    \"lastName\": \"McTesterson\",\n    \"emailAddress\": \"test@innov8.dev\",\n    \"accountInfo\": {\n        \"institutionName\": \"Test Bank\",\n        \"accountNumber\": \"111222333\",\n        \"routingNumber\": \"123456789\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Org Employees",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI0MTE4MDExYy01ZWYyLTRmNTUtYmUxNS05YTlmMzJmOWZkMzciLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5MjE5MTQsImF1dGhDb2RlIjoiN2ZhYmJiZDctNTJhNi00YWY2LTg3ZjMtMzIwNmQ0NjJhM2U3IiwiZXhwIjoxNjQzOTI1NTE0fQ.tJZzGkGEspId-9uVV4Rojvmt5k-qn9jLCQ9bakX1Dvk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/prism/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Org Employee",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI0MTE4MDExYy01ZWYyLTRmNTUtYmUxNS05YTlmMzJmOWZkMzciLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5NTIyNDYsImF1dGhDb2RlIjoiN2ZhYmJiZDctNTJhNi00YWY2LTg3ZjMtMzIwNmQ0NjJhM2U3IiwiZXhwIjoxNjQzOTU1ODQ2fQ.dQwLAtINr_U2Jo40h8KElRmVUugps4NWfAR7_0bi71A",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/prism/employees/d52d2c4b-d03e-4875-a61b-dd7db4fd86c3",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"employees",
+						"d52d2c4b-d03e-4875-a61b-dd7db4fd86c3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Org Employee",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2ZjU1OTRmOC0zMzM1LTQ4N2MtOGExNC1hM2FhYWU1ZjU5YTYiLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5NTQzMzksImF1dGhDb2RlIjoiYWNlOWY4MjUtZmY0Zi00YjBiLTlhZGUtMmNiNDczZmJmOTY2IiwiZXhwIjoxNjQzOTU3OTM5fQ.OLJxPOcwc2dOmJVQYSk78fg6Kr_2tBZzaLPJTbRj9hA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"0662bf52-353f-43ab-98c7-3a2803213523\",\n    \"emailAddress\": \"alice.anderson@innov8.dev\",\n    \"accountInfo\": {\n        \"accountNumber\": \"111222323\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deactivate Org Employee",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4ZWQ3NmU2ZS0xZjdlLTRhNTctYjMzNy03NzE0YTk4NzM3ZDAiLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5NTQ1NzQsImF1dGhDb2RlIjoiOTQzZDJkOWYtZjZiNy00NTJkLWJmMmMtOTQxMzkzMTkxMDMwIiwiZXhwIjoxNjQzOTU4MTc0fQ.nt9q5UdKax4W3AnW4Dbk-j0-etKbtM3xDzuXsXS49WI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/prism/employees/5377e512-cf90-4bbd-b3b7-d8241b8e118e",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"employees",
+						"5377e512-cf90-4bbd-b3b7-d8241b8e118e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reactivate Org Employee",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4ZWQ3NmU2ZS0xZjdlLTRhNTctYjMzNy03NzE0YTk4NzM3ZDAiLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5NTQ1NzQsImF1dGhDb2RlIjoiOTQzZDJkOWYtZjZiNy00NTJkLWJmMmMtOTQxMzkzMTkxMDMwIiwiZXhwIjoxNjQzOTU4MTc0fQ.nt9q5UdKax4W3AnW4Dbk-j0-etKbtM3xDzuXsXS49WI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"5377e512-cf90-4bbd-b3b7-d8241b8e118e\",\n    \"emailAddress\": \"alice.anderson@innov8.dev\",\n    \"accountInfo\": {\n        \"accountNumber\": \"111222323\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4ZWQ3NmU2ZS0xZjdlLTRhNTctYjMzNy03NzE0YTk4NzM3ZDAiLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5NTQ1NzQsImF1dGhDb2RlIjoiOTQzZDJkOWYtZjZiNy00NTJkLWJmMmMtOTQxMzkzMTkxMDMwIiwiZXhwIjoxNjQzOTU4MTc0fQ.nt9q5UdKax4W3AnW4Dbk-j0-etKbtM3xDzuXsXS49WI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"payeeId\": \"5377e512-cf90-4bbd-b3b7-d8241b8e118e\",\n    \"paymentAmount\": 100.01\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/payments",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Swagger UI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/prism/swagger-ui/index.html",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"swagger-ui",
+						"index.html"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
