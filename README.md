@@ -6,10 +6,11 @@ those systems provide an organization name and a secret key. The system confirms
 the organization's generated ID and auth code. This code is linked to the organization and is contained with 
 the token that is provided during authentication, to confirm access privileges to certain resource endpoints. The 
 secret key provided by the registering application is used as a backup in case the generated auth code is lost or
-compromised. Authenticated applications are able to add employees to their PRISM organization and maintain their 
-information. Payment requests can be sent to the PRISM application by providing the payee's (employee) ID and the
-payment amount; valid requests will yield a successful response containing a generated payment ID that can be used 
-by the client system.
+compromised. 
+
+Authenticated applications are able to add employees to their PRISM organization and maintain their information. 
+Payment requests can be sent to the PRISM application by providing the payee's (employee) ID and the payment amount; 
+valid requests will yield a successful response containing a generated payment ID that can be used by the client system.
 
 ## Tech Stack
 
