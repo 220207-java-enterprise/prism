@@ -1,16 +1,14 @@
 package dev.innov8.prism.auth;
 
-import dev.innov8.prism.auth.dtos.requests.AuthenticationRequest;
-import dev.innov8.prism.auth.dtos.responses.Principal;
-import dev.innov8.prism.organization.OrgService;
+import dev.innov8.prism.auth.dtos.AuthCodeResponse;
+import dev.innov8.prism.auth.dtos.AuthenticationRequest;
+import dev.innov8.prism.auth.dtos.ResetAuthCodeRequest;
 import dev.innov8.prism.organization.Organization;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
@@ -32,6 +30,11 @@ public class AuthController {
         String token = tokenService.generateToken(payload);
         resp.setHeader("Authorization", token);
         return payload;
+    }
+
+    @PatchMapping(value = "/code", consumes = "application/json", produces = "application/json")
+    public AuthCodeResponse requestNewAuthCode(@Valid @RequestBody ResetAuthCodeRequest resetAuthCodeRequest) {
+        return authService.resetOrgAuthCode(resetAuthCodeRequest);
     }
 
 }

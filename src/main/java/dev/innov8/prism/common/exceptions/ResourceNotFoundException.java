@@ -1,5 +1,6 @@
 package dev.innov8.prism.common.exceptions;
 
+@SuppressWarnings("unused")
 public class ResourceNotFoundException extends RuntimeException {
 
     public ResourceNotFoundException() {

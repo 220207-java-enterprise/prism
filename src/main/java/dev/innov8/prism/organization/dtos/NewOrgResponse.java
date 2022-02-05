@@ -1,5 +1,6 @@
 package dev.innov8.prism.organization.dtos;
 
+@SuppressWarnings("unused")
 public class NewOrgResponse {
 
     private String orgId;

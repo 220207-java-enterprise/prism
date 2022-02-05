@@ -1,6 +1,5 @@
 package dev.innov8.prism.organization;
 
-import dev.innov8.prism.common.dtos.ResourceCreationResponse;
 import dev.innov8.prism.common.exceptions.AuthorizationException;
 import dev.innov8.prism.common.exceptions.ResourceNotFoundException;
 import dev.innov8.prism.common.exceptions.ResourcePersistenceException;
@@ -34,18 +33,6 @@ public class OrgService {
         }
 
         return new NewOrgResponse(newOrg.getId(), newOrg.getAuthCode());
-    }
-
-    @Transactional
-    public AuthCodeResponse resetOrgAuthCode(ResetAuthCodeRequest request) {
-        Organization org = orgRepo.findById(request.getOrgId()).orElseThrow(ResourceNotFoundException::new);
-        if (org.getKey().equals(request.getOrgKey())) {
-            String newAuthCode = UUID.randomUUID().toString();
-            org.setAuthCode(newAuthCode);
-            return new AuthCodeResponse(org.getId(), newAuthCode);
-        } else {
-            throw new AuthorizationException("Incorrect organization key provided.");
-        }
     }
 
     @Transactional

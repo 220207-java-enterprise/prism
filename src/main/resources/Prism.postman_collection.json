@@ -40,7 +40,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"orgId\": \"cb5a2eef-ddca-4eba-b5aa-dd57c5e7f12f\",\n    \"authCode\": \"3ad46672-1d8f-46fb-9359-677cfb69afce\"\n}",
+					"raw": "{\n    \"orgId\": \"REPLACE-ME\",\n    \"authCode\": \"REPLACE-ME\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -68,13 +68,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjYjVhMmVlZi1kZGNhLTRlYmEtYjVhYS1kZDU3YzVlN2YxMmYiLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5MjE0MDQsImF1dGhDb2RlIjoiM2FkNDY2NzItMWQ4Zi00NmZiLTkzNTktNjc3Y2ZiNjlhZmNlIiwiZXhwIjoxNjQzOTI1MDA0fQ.guACwmOwAoIaZTOStU948h2iPkPvTrhDiIpirDYrRlE",
+						"value": "REPLACE-ME",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"orgId\": \"cb5a2eef-ddca-4eba-b5aa-dd57c5e7f12f\",\n    \"orgName\": \"New Test Org\"\n}",
+					"raw": "{\n    \"orgId\": \"REPLACE-ME\",\n    \"orgName\": \"REPLACE-ME\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -109,7 +109,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"orgId\": \"cb5a2eef-ddca-4eba-b5aa-dd57c5e7f12f\",\n    \"orgKey\": \"my-secret-key\"\n}",
+					"raw": "{\n    \"orgId\": \"REPLACE-ME\",\n    \"orgKey\": \"REPLACE-ME\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -117,14 +117,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:5000/prism/organizations/code",
+					"raw": "localhost:5000/prism/auth/code",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
 						"prism",
-						"organizations",
+						"auth",
 						"code"
 					]
 				}
@@ -138,12 +138,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4NDU2NDU3Ny0wOTY2LTQ3MWQtYTBjOS00ZWNjNDFmMjMzNjAiLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5MjE4MzQsImF1dGhDb2RlIjoiM2QwZjA0NzItZWEwYi00ZWI2LWJmNjAtNjY0ZDEzNWQzZDc4IiwiZXhwIjoxNjQzOTI1NDM0fQ.NCqRceYEco8eN4Djn1hAzQAz0cPAYEOKL0h_7zscbVU",
+						"value": "REPLACE-ME",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "localhost:5000/prism/organizations/84564577-0966-471d-a0c9-4ecc41f23360",
+					"raw": "localhost:5000/prism/organizations/REPLACE-ME",
 					"host": [
 						"localhost"
 					],
@@ -151,7 +151,7 @@
 					"path": [
 						"prism",
 						"organizations",
-						"84564577-0966-471d-a0c9-4ecc41f23360"
+						"REPLACE-ME"
 					]
 				}
 			},
@@ -164,7 +164,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI0MTE4MDExYy01ZWYyLTRmNTUtYmUxNS05YTlmMzJmOWZkMzciLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5MjE5MTQsImF1dGhDb2RlIjoiN2ZhYmJiZDctNTJhNi00YWY2LTg3ZjMtMzIwNmQ0NjJhM2U3IiwiZXhwIjoxNjQzOTI1NTE0fQ.tJZzGkGEspId-9uVV4Rojvmt5k-qn9jLCQ9bakX1Dvk",
+						"value": "REPLACE-ME",
 						"type": "text"
 					}
 				],
@@ -192,13 +192,47 @@
 			"response": []
 		},
 		{
+			"name": "Add Employee To Org 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "REPLACE-ME"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Alice\",\n    \"lastName\": \"Anderson\",\n    \"emailAddress\": \"aanderson@innov8.dev\",\n    \"accountInfo\": {\n        \"institutionName\": \"Test Bank\",\n        \"accountNumber\": \"111333555\",\n        \"routingNumber\": \"123456789\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/prism/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"prism",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Org Employees",
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI0MTE4MDExYy01ZWYyLTRmNTUtYmUxNS05YTlmMzJmOWZkMzciLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5MjE5MTQsImF1dGhDb2RlIjoiN2ZhYmJiZDctNTJhNi00YWY2LTg3ZjMtMzIwNmQ0NjJhM2U3IiwiZXhwIjoxNjQzOTI1NTE0fQ.tJZzGkGEspId-9uVV4Rojvmt5k-qn9jLCQ9bakX1Dvk",
+						"value": "REPLACE-ME",
 						"type": "text"
 					}
 				],
@@ -223,12 +257,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI0MTE4MDExYy01ZWYyLTRmNTUtYmUxNS05YTlmMzJmOWZkMzciLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5NTIyNDYsImF1dGhDb2RlIjoiN2ZhYmJiZDctNTJhNi00YWY2LTg3ZjMtMzIwNmQ0NjJhM2U3IiwiZXhwIjoxNjQzOTU1ODQ2fQ.dQwLAtINr_U2Jo40h8KElRmVUugps4NWfAR7_0bi71A",
+						"value": "REPLACE-ME",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "localhost:5000/prism/employees/d52d2c4b-d03e-4875-a61b-dd7db4fd86c3",
+					"raw": "localhost:5000/prism/employees/REPLACE-ME",
 					"host": [
 						"localhost"
 					],
@@ -236,7 +270,7 @@
 					"path": [
 						"prism",
 						"employees",
-						"d52d2c4b-d03e-4875-a61b-dd7db4fd86c3"
+						"REPLACE-ME"
 					]
 				}
 			},
@@ -249,13 +283,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2ZjU1OTRmOC0zMzM1LTQ4N2MtOGExNC1hM2FhYWU1ZjU5YTYiLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5NTQzMzksImF1dGhDb2RlIjoiYWNlOWY4MjUtZmY0Zi00YjBiLTlhZGUtMmNiNDczZmJmOTY2IiwiZXhwIjoxNjQzOTU3OTM5fQ.OLJxPOcwc2dOmJVQYSk78fg6Kr_2tBZzaLPJTbRj9hA",
+						"value": "REPLACE-ME",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"0662bf52-353f-43ab-98c7-3a2803213523\",\n    \"emailAddress\": \"alice.anderson@innov8.dev\",\n    \"accountInfo\": {\n        \"accountNumber\": \"111222323\"\n    }\n}",
+					"raw": "{\n    \"id\": \"REPLACE-ME\",\n    \"emailAddress\": \"alice.anderson@innov8.dev\",\n    \"accountInfo\": {\n        \"accountNumber\": \"111222323\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -283,12 +317,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4ZWQ3NmU2ZS0xZjdlLTRhNTctYjMzNy03NzE0YTk4NzM3ZDAiLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5NTQ1NzQsImF1dGhDb2RlIjoiOTQzZDJkOWYtZjZiNy00NTJkLWJmMmMtOTQxMzkzMTkxMDMwIiwiZXhwIjoxNjQzOTU4MTc0fQ.nt9q5UdKax4W3AnW4Dbk-j0-etKbtM3xDzuXsXS49WI",
+						"value": "REPLACE-ME",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "localhost:5000/prism/employees/5377e512-cf90-4bbd-b3b7-d8241b8e118e",
+					"raw": "localhost:5000/prism/employees/REPLACE-ME",
 					"host": [
 						"localhost"
 					],
@@ -296,7 +330,7 @@
 					"path": [
 						"prism",
 						"employees",
-						"5377e512-cf90-4bbd-b3b7-d8241b8e118e"
+						"REPLACE-ME"
 					]
 				}
 			},
@@ -309,28 +343,20 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4ZWQ3NmU2ZS0xZjdlLTRhNTctYjMzNy03NzE0YTk4NzM3ZDAiLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5NTQ1NzQsImF1dGhDb2RlIjoiOTQzZDJkOWYtZjZiNy00NTJkLWJmMmMtOTQxMzkzMTkxMDMwIiwiZXhwIjoxNjQzOTU4MTc0fQ.nt9q5UdKax4W3AnW4Dbk-j0-etKbtM3xDzuXsXS49WI",
+						"value": "REPLACE-ME",
 						"type": "text"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"id\": \"5377e512-cf90-4bbd-b3b7-d8241b8e118e\",\n    \"emailAddress\": \"alice.anderson@innov8.dev\",\n    \"accountInfo\": {\n        \"accountNumber\": \"111222323\"\n    }\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "localhost:5000/prism/employees",
+					"raw": "localhost:5000/prism/employees/REPLACE-ME",
 					"host": [
 						"localhost"
 					],
 					"port": "5000",
 					"path": [
 						"prism",
-						"employees"
+						"employees",
+						"REPLACE-ME"
 					]
 				}
 			},
@@ -343,13 +369,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4ZWQ3NmU2ZS0xZjdlLTRhNTctYjMzNy03NzE0YTk4NzM3ZDAiLCJzdWIiOiJUZXN0T3JnIiwiaXNzIjoicHJpc20iLCJpYXQiOjE2NDM5NTQ1NzQsImF1dGhDb2RlIjoiOTQzZDJkOWYtZjZiNy00NTJkLWJmMmMtOTQxMzkzMTkxMDMwIiwiZXhwIjoxNjQzOTU4MTc0fQ.nt9q5UdKax4W3AnW4Dbk-j0-etKbtM3xDzuXsXS49WI",
+						"value": "REPLACE-ME",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"payeeId\": \"5377e512-cf90-4bbd-b3b7-d8241b8e118e\",\n    \"paymentAmount\": 100.01\n}",
+					"raw": "{\n    \"payeeId\": \"REPLACE-ME\",\n    \"paymentAmount\": 100.01\n}",
 					"options": {
 						"raw": {
 							"language": "json"

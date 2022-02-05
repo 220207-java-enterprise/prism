@@ -1,5 +1,6 @@
 package dev.innov8.prism.common.dtos;
 
+@SuppressWarnings("unused")
 public class ResourceCreationResponse {
 
     private String resourceId;

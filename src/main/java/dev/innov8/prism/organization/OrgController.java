@@ -1,7 +1,5 @@
 package dev.innov8.prism.organization;
 
-import dev.innov8.prism.auth.dtos.requests.AuthenticationRequest;
-import dev.innov8.prism.common.dtos.ResourceCreationResponse;
 import dev.innov8.prism.common.security.Authenticated;
 import dev.innov8.prism.common.security.SecurityContext;
 import dev.innov8.prism.organization.dtos.*;
@@ -39,11 +37,6 @@ public class OrgController {
     @PatchMapping(consumes = "application/json", produces = "application/json")
     public void editOrganization(@Valid @RequestBody EditOrgRequest request) {
         orgService.editOrganization(request, securityContext.getRequester().getAuthCode());
-    }
-
-    @PatchMapping(value = "/code", consumes = "application/json", produces = "application/json")
-    public AuthCodeResponse requestNewAuthCode(@Valid @RequestBody ResetAuthCodeRequest resetAuthCodeRequest) {
-        return orgService.resetOrgAuthCode(resetAuthCodeRequest);
     }
 
     @Authenticated

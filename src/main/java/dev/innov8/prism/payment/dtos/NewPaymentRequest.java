@@ -3,6 +3,7 @@ package dev.innov8.prism.payment.dtos;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
+@SuppressWarnings("unused")
 public class NewPaymentRequest {
 
     @NotBlank

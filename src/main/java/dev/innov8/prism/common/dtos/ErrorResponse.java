@@ -2,6 +2,7 @@ package dev.innov8.prism.common.dtos;
 
 import java.time.LocalDateTime;
 
+@SuppressWarnings("unused")
 public class ErrorResponse {
 
     private int statusCode;
